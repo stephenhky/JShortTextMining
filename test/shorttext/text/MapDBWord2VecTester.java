@@ -24,6 +24,7 @@ public class MapDBWord2VecTester {
             String word2 = reader.readLine().trim();
             double similarity = word2VecUtil.similarity(word1, word2);
             System.out.println("similarity = "+similarity);
+            System.out.println(word2VecUtil.getWordMatrix(word1));
 
             System.out.print("continue? (y/n) ");
             tonext = (reader.readLine().equalsIgnoreCase("y"));
