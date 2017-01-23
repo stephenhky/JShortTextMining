@@ -16,5 +16,15 @@
     <orderEntry type="library" name="org.datavec:datavec-api:0.7.2" level="project" />
     <orderEntry type="library" name="com.eduworks:ew.db.mapdb:4.0.0" level="project" />
     <orderEntry type="library" name="org.datavec:datavec-nd4j-common:0.7.2" level="project" />
+    <orderEntry type="library" name="org.bytedeco:javacpp:1.3.1" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$USER_HOME$/OpenBLAS" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
