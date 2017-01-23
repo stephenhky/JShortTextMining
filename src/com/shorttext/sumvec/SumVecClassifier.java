@@ -1,4 +1,4 @@
-package shorttext.sumvec;
+package com.shorttext.sumvec;
 
 /**
  * Created by hok on 1/19/17.

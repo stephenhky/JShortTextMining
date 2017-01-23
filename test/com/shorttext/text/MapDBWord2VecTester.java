@@ -1,8 +1,7 @@
-package shorttext.text;
+package com.shorttext.text;
 
-import org.nd4j.linalg.factory.Nd4j;
-import shorttext.word2vec.MapDBWord2VecUtil;
-import shorttext.word2vec.Word2VecUtil;
+import com.shorttext.word2vec.MapDBWord2VecUtil;
+import com.shorttext.word2vec.Word2VecUtil;
 
 import java.io.BufferedReader;
 import java.io.File;

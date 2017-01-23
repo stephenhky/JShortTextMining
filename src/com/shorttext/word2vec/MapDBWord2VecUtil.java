@@ -1,10 +1,9 @@
-package shorttext.word2vec;
+package com.shorttext.word2vec;
 
 import org.mapdb.DB;
 import org.mapdb.DBMaker;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.factory.Nd4j;
-import org.nd4j.linalg.ops.transforms.Transforms;
 
 import java.io.File;
 import java.util.Map;

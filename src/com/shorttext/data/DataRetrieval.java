@@ -1,4 +1,4 @@
-package shorttext.data;
+package com.shorttext.data;
 
 import com.opencsv.CSVParser;
 
