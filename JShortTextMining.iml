@@ -65,5 +65,6 @@
     <orderEntry type="library" name="Maven: org.nd4j:nd4j-native:macosx-x86_64:0.7.2" level="project" />
     <orderEntry type="library" name="Maven: org.nd4j:nd4j-native:windows-x86_64:0.7.2" level="project" />
     <orderEntry type="library" name="Maven: org.nd4j:nd4j-native:linux-ppc64le:0.7.2" level="project" />
+    <orderEntry type="library" name="org.apache.opennlp:opennlp-tools:1.7.0" level="project" />
   </component>
 </module>
