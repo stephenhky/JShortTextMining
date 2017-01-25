@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * Created by hok on 1/19/17.
  */
-public class MapDBWord2VecUtil implements Word2VecUtil {
+public class MapDBWord2VecUtil implements WordEmbeddingModelUtil {
     Map<String, double[]> word2VecMap;
 
     public MapDBWord2VecUtil(File mapDBFile) {

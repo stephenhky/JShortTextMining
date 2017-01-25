@@ -1,7 +1,7 @@
 package com.shorttext.text;
 
 import com.shorttext.word2vec.MapDBWord2VecUtil;
-import com.shorttext.word2vec.Word2VecUtil;
+import com.shorttext.word2vec.WordEmbeddingModelUtil;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -13,7 +13,7 @@ import java.io.InputStreamReader;
  */
 public class MapDBWord2VecTester {
     public static void main(String[] args) throws IOException {
-        Word2VecUtil word2VecUtil = new MapDBWord2VecUtil(new File(args[0]));
+        WordEmbeddingModelUtil wordEmbeddingModelUtil = new MapDBWord2VecUtil(new File(args[0]));
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         boolean tonext = true;
@@ -22,9 +22,9 @@ public class MapDBWord2VecTester {
             String word1 = reader.readLine().trim();
             System.out.print("word2> ");
             String word2 = reader.readLine().trim();
-            double similarity = word2VecUtil.similarity(word1, word2);
+            double similarity = wordEmbeddingModelUtil.similarity(word1, word2);
             System.out.println("similarity = "+similarity);
-            System.out.println(word2VecUtil.getWordMatrix(word1));
+            System.out.println(wordEmbeddingModelUtil.getWordMatrix(word1));
 
             System.out.print("continue? (y/n) ");
             tonext = (reader.readLine().equalsIgnoreCase("y"));

@@ -1,6 +1,6 @@
 package com.shorttext;
 
-import com.shorttext.word2vec.Word2VecUtil;
+import com.shorttext.word2vec.WordEmbeddingModelUtil;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.deeplearning4j.text.tokenization.tokenizer.Tokenizer;
 import org.deeplearning4j.text.tokenization.tokenizerfactory.TokenizerFactory;
@@ -16,7 +16,7 @@ import java.util.Map;
  * Created by hok on 1/25/17.
  */
 abstract public class WordEmbeddingClassifier {
-    protected Word2VecUtil model;
+    protected WordEmbeddingModelUtil model;
     protected TokenizerFactory tokenizerFactory;
     protected int vecSize;
 
@@ -43,7 +43,7 @@ abstract public class WordEmbeddingClassifier {
         return sentVector;
     }
 
-    protected void init(Word2VecUtil model) {
+    protected void init(WordEmbeddingModelUtil model) {
         this.model = model;
         try {
             this.tokenizerFactory = new UimaTokenizerFactory();

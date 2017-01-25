@@ -9,7 +9,7 @@ import java.io.File;
 /**
  * Created by hok on 1/19/17.
  */
-public class DL4JWord2VecUtil implements Word2VecUtil {
+public class DL4JWord2VecUtil implements WordEmbeddingModelUtil {
     private Word2Vec word2vec;
 
     public DL4JWord2VecUtil(File word2VecFile) {

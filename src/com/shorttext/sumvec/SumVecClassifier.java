@@ -1,7 +1,7 @@
 package com.shorttext.sumvec;
 
 import com.shorttext.WordEmbeddingClassifier;
-import com.shorttext.word2vec.Word2VecUtil;
+import com.shorttext.word2vec.WordEmbeddingModelUtil;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.factory.Nd4j;
 import org.nd4j.linalg.ops.transforms.Transforms;
@@ -16,7 +16,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class SumVecClassifier extends WordEmbeddingClassifier {
     private Map<String, INDArray> averageVectors;
 
-    public SumVecClassifier(Word2VecUtil model) {
+    public SumVecClassifier(WordEmbeddingModelUtil model) {
         init(model);
     }
 
