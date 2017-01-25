@@ -24,6 +24,14 @@ public class MapDBWord2VecUtil implements Word2VecUtil {
         return word2VecMap.get(word);
     }
 
+    public boolean hasWord(String word) {
+        return this.word2VecMap.containsKey(word);
+    }
+
+    public int getVectorSize() {
+        return this.getWordVector("apple").length;
+    }
+
     public INDArray getWordMatrix(String word) {
         return Nd4j.create(getWordVector(word));
     }

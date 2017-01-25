@@ -20,17 +20,22 @@ public class DL4JWord2VecUtil implements Word2VecUtil {
         System.err.println("Time elapsed = "+(time1-time0)*1e-9+" sec");
     }
 
-    @Override
     public double similarity(String word1, String word2) {
         return this.word2vec.similarity(word1, word2);
     }
 
-    @Override
     public double[] getWordVector(String word) {
         return this.word2vec.getWordVector(word);
     }
 
-    @Override
+    public boolean hasWord(String word) {
+        return this.word2vec.hasWord(word);
+    }
+
+    public int getVectorSize() {
+        return this.word2vec.getWordVector("apple").length;
+    }
+
     public INDArray getWordMatrix(String word) {
         return this.word2vec.getWordVectorMatrixNormalized(word);
     }

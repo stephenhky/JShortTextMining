@@ -9,4 +9,6 @@ public interface Word2VecUtil {
     public double similarity(String word1, String word2);
     public INDArray getWordMatrix(String word);
     public double[] getWordVector(String word);
+    public boolean hasWord(String word);
+    public int getVectorSize();
 }

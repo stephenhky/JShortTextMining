@@ -8,7 +8,11 @@ import org.nd4j.linalg.factory.Nd4j;
  */
 public class ND4JBackendTest {
     public static void main(String[] args) {
-        INDArray ndArray = Nd4j.create(new double[]{1., 2.2, 3.3});
-        System.out.println(ndArray);
+        INDArray ndArray1 = Nd4j.create(new double[]{1., 2.2, 3.3});
+        System.out.println(ndArray1);
+        INDArray ndArray2 = Nd4j.create(new double[]{1., 2.4, 2.3});
+        System.out.println(ndArray2);
+        System.out.println(ndArray1.add(ndArray2));
+        System.out.println(ndArray1.div(ndArray1.distance2(Nd4j.zeros(3))));
     }
 }
