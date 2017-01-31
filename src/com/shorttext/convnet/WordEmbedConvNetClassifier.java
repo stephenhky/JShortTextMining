@@ -6,11 +6,15 @@ import org.deeplearning4j.nn.api.OptimizationAlgorithm;
 import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
 import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
 import org.deeplearning4j.nn.conf.Updater;
+import org.deeplearning4j.nn.conf.inputs.InputType;
 import org.deeplearning4j.nn.conf.layers.ConvolutionLayer;
+import org.deeplearning4j.nn.conf.layers.DenseLayer;
+import org.deeplearning4j.nn.conf.layers.OutputLayer;
 import org.deeplearning4j.nn.conf.layers.SubsamplingLayer;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.deeplearning4j.nn.weights.WeightInit;
 import org.nd4j.linalg.activations.Activation;
+import org.nd4j.linalg.lossfunctions.LossFunctions;
 
 import java.util.List;
 import java.util.Map;
@@ -22,8 +26,10 @@ public class WordEmbedConvNetClassifier extends WordEmbeddingClassifier {
     private int numEpoch = 10;
     private int numFilters = 1200;
     private int filterLength = 2;
+    private int maxLen = 15;
     private MultiLayerNetwork neuralNet;
     private int seed = 123;
+    private int vecSize = 300;
 
     public WordEmbedConvNetClassifier(WordEmbeddingModelUtil model) {
         init(model);
@@ -47,7 +53,18 @@ public class WordEmbedConvNetClassifier extends WordEmbeddingClassifier {
                             .activation(Activation.RELU)
                             .build())
                 .layer(1, new SubsamplingLayer.Builder(SubsamplingLayer.PoolingType.MAX)
-                            .kernelSize())
+                            .kernelSize(maxLen-filterLength+1, maxLen-filterLength+1)
+                            .stride(1, 1)
+                            .build())
+                .layer(2, new DenseLayer.Builder()
+                            .build())
+                .layer(3, new OutputLayer.Builder(LossFunctions.LossFunction.RECONSTRUCTION_CROSSENTROPY)
+                            .nOut(trainData.size())
+                            .activation(Activation.SOFTMAX)
+                            .build())
+                .pretrain(false).backprop(true)
+                .setInputType(InputType.convolutional(maxLen, vecSize, numFilters))
+                .build();
     }
 
     public Map<String, Double> score(String sentence) {
