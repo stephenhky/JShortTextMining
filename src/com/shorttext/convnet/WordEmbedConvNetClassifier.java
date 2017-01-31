@@ -65,6 +65,7 @@ public class WordEmbedConvNetClassifier extends WordEmbeddingClassifier {
                 .pretrain(false).backprop(true)
                 .setInputType(InputType.convolutional(maxLen, vecSize, numFilters))
                 .build();
+        // TODO: training code here
     }
 
     public Map<String, Double> score(String sentence) {
@@ -85,5 +86,37 @@ public class WordEmbedConvNetClassifier extends WordEmbeddingClassifier {
 
     public void setSeed(int seed) {
         this.seed = seed;
+    }
+
+    public int getNumFilters() {
+        return numFilters;
+    }
+
+    public void setNumFilters(int numFilters) {
+        this.numFilters = numFilters;
+    }
+
+    public int getFilterLength() {
+        return filterLength;
+    }
+
+    public void setFilterLength(int filterLength) {
+        this.filterLength = filterLength;
+    }
+
+    public int getMaxLen() {
+        return maxLen;
+    }
+
+    public void setMaxLen(int maxLen) {
+        this.maxLen = maxLen;
+    }
+
+    public int getVecSize() {
+        return vecSize;
+    }
+
+    public void setVecSize(int vecSize) {
+        this.vecSize = vecSize;
     }
 }
