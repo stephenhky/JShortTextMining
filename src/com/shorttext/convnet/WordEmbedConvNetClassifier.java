@@ -65,7 +65,7 @@ public class WordEmbedConvNetClassifier extends WordEmbeddingClassifier {
                 .pretrain(false).backprop(true)
                 .setInputType(InputType.convolutional(maxLen, vecSize, numFilters))
                 .build();
-        MultiLayerNetwork neuralNet = new MultiLayerNetwork(config);
+        neuralNet = new MultiLayerNetwork(config);
         neuralNet.init();
 
 
