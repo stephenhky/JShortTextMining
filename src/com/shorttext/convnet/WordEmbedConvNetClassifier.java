@@ -65,7 +65,10 @@ public class WordEmbedConvNetClassifier extends WordEmbeddingClassifier {
                 .pretrain(false).backprop(true)
                 .setInputType(InputType.convolutional(maxLen, vecSize, numFilters))
                 .build();
-        // TODO: training code here
+        MultiLayerNetwork neuralNet = new MultiLayerNetwork(config);
+        neuralNet.init();
+
+
     }
 
     public Map<String, Double> score(String sentence) {
