@@ -68,7 +68,7 @@ public class WordEmbedConvNetClassifier extends WordEmbeddingClassifier {
         neuralNet = new MultiLayerNetwork(config);
         neuralNet.init();
 
-
+        // TODO: finish the training
     }
 
     public Map<String, Double> score(String sentence) {

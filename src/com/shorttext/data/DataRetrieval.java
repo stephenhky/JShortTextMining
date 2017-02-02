@@ -1,6 +1,7 @@
 package com.shorttext.data;
 
 import com.opencsv.CSVParser;
+import org.nd4j.linalg.dataset.api.iterator.DataSetIterator;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -36,5 +37,14 @@ public class DataRetrieval {
 
         // return map
         return dataMap;
+    }
+
+    public static DataSetIterator convertMapsToDataSetIterator(Map<String, List<String>> dataMap) {
+        // TODO: make iterator
+        return null;
+    }
+
+    public static DataSetIterator retrieveLabeledDataSetIterator(InputStream inputStream, boolean header) throws IOException {
+        return convertMapsToDataSetIterator(retrieveLabeledDataset(inputStream, header));
     }
 }
