@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JShortTextMining.iml" filepath="$PROJECT_DIR$/JShortTextMining.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shorttext-core/shorttext-core.iml" filepath="$PROJECT_DIR$/shorttext-core/shorttext-core.iml" />
     </modules>
   </component>
 </project>

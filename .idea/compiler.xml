@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="JShortTextMining" />
+        <module name="shorttext-core" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="JShortTextMining" target="1.5" />
+      <module name="shorttext-core" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
