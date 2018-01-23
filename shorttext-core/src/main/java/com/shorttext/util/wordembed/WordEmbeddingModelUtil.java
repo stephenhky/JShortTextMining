@@ -1,4 +1,4 @@
-package com.shorttext.word2vec;
+package com.shorttext.util.wordembed;
 
 import org.nd4j.linalg.api.ndarray.INDArray;
 

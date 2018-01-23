@@ -6,7 +6,11 @@
 
     <groupId>com.shorttext</groupId>
     <artifactId>JShortTextMining</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>shorttext-core</module>
+    </modules>
 
     <dependencies>
         <dependency>

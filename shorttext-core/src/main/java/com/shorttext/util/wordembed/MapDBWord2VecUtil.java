@@ -1,7 +1,8 @@
-package com.shorttext.word2vec;
+package com.shorttext.util.wordembed;
 
 import org.mapdb.DB;
 import org.mapdb.DBMaker;
+import org.mapdb.Serializer;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.factory.Nd4j;
 import org.nd4j.linalg.ops.transforms.Transforms;
@@ -15,9 +16,10 @@ import java.util.Map;
 public class MapDBWord2VecUtil implements WordEmbeddingModelUtil {
     Map<String, double[]> word2VecMap;
 
+
     public MapDBWord2VecUtil(File mapDBFile) {
-        DB db = DBMaker.newFileDB(mapDBFile).make();
-        this.word2VecMap = db.getHashMap("map");
+        DB db = DBMaker.fileDB(mapDBFile).closeOnJvmShutdown().make();
+        this.word2VecMap = db.hashMap("map").keySerializer(Serializer.STRING).valueSerializer(Serializer.DOUBLE_ARRAY).create();
     }
 
     public double[] getWordVector(String word) {
