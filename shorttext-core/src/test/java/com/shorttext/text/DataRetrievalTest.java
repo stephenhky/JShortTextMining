@@ -12,7 +12,7 @@ public class DataRetrievalTest {
 
     @Test
     public void testSubDict() throws IOException {
-        Map<String, List<String>> map = DataRetrieval.retrieveLabeledDataset(getClass().getResourceAsStream("shorttext_exampledata.csv"), true);
+        Map<String, List<String>> map = DataRetrieval.retrieveLabeledDataset(DataRetrieval.class.getResourceAsStream("shorttext_exampledata.csv"), true);
         Assert.assertEquals(3, map.size());
     }
 
