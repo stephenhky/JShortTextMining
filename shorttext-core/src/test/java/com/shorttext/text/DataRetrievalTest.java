@@ -14,6 +14,13 @@ public class DataRetrievalTest {
     public void testSubDict() throws IOException {
         Map<String, List<String>> map = DataRetrieval.retrieveLabeledDataset(DataRetrieval.class.getResourceAsStream("shorttext_exampledata.csv"), true);
         Assert.assertEquals(3, map.size());
+
+        for (String subject: map.keySet()) {
+            System.out.println(subject+": ");
+            for (String words: map.get(subject)) {
+                System.out.println("\t"+words);
+            }
+        }
     }
 
 }
