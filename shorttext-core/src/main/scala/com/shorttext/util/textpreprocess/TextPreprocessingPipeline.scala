@@ -2,8 +2,7 @@ package com.shorttext.util.textpreprocess
 
 import scala.annotation.tailrec
 
-class TextPreprocessingPipeline {
-  val funclist = List( (x: String) => x)
+class TextPreprocessingPipeline(funclist : List[String => String] = List( (x: String) => x)) {
 
   @tailrec
   final def preprocessRecursively(text: String, funclist: List[String => String]) : String = {
