@@ -9,6 +9,7 @@ public class TextPreprocessingTest {
     @Test
     public void testStandardPreprocessing() {
         TextPreprocessingPipeline standPipeline = PipelineFactory.standardPipeline();
+        System.out.println(standPipeline.preprocess("Natural language processing and text mining on fire."));
         Assert.assertEquals(standPipeline.preprocess("Natural language processing and text mining on fire."), "natur languag process text mine fire");
     }
 }
