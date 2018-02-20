@@ -16,8 +16,8 @@ object PipelineFactory {
       (text: String) => text.toLowerCase,
       (text: String) => tokenizer.tokenize(text).
         filter( (token: String) => !(stopwordSet.contains(token))).
-        reduce( (w1: String, w2: String) => w1+" "+w2),
-      (text: String) => stemmer.stem(text)
+        map( (text: String) => stemmer.stem(text)).
+        reduce( (w1: String, w2: String) => w1+" "+w2)
     )
     new TextPreprocessingPipeline(funclist)
   }
