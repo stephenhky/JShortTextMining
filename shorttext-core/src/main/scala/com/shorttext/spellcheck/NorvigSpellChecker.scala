@@ -7,11 +7,11 @@ import scala.io.Source
 
 // reference: https://norvig.com/spell-correct.html
 
-class NorvigSpellChecker {
+class NorvigSpellChecker extends SpellChecker {
   var wordCounts : Map[String, Int] = Map()
   val alphabets = ('a' to 'z').toSet
 
-  def train(trainFile : File) : Unit = train(new FileInputStream(trainFile))
+  override def train(trainFile : File) : Unit = train(new FileInputStream(trainFile))
 
   def train(trainFileStream : InputStream) : Unit = {
     val lines = Source.fromInputStream(trainFileStream) mkString
@@ -41,7 +41,7 @@ class NorvigSpellChecker {
   def getEditTwoSpellings(word: String) : Set[String] =
     getEditOneSpellings(word).map(getEditOneSpellings).reduceRight( (set1, set2) => set1 | set2)
 
-  def correct(wrongSpelling: String) : String = {
+  override def correct(wrongSpelling: String) : String = {
     val edit0words = Set(wrongSpelling) intersect wordCounts.keySet
     if (edit0words.size>0) return edit0words.maxBy( s => wordCounts(s))
     val edit1words = getEditOneSpellings(wrongSpelling)

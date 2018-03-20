@@ -17,6 +17,8 @@
     <orderEntry type="library" name="R Skeletons" level="application" />
     <orderEntry type="library" name="scala-sdk-2.12.4" level="application" />
     <orderEntry type="library" name="scala-sdk-2.11.8" level="application" />
+    <orderEntry type="library" name="Maven: de.julielab:aliasi-lingpipe:4.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.12" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: commons-io:commons-io:2.4" level="project" />
     <orderEntry type="library" name="Maven: org.scala-lang:scala-library:2.12.4" level="project" />
     <orderEntry type="library" name="Maven: org.nd4j:nd4j-native-platform:0.7.2" level="project" />
