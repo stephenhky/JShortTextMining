@@ -11,9 +11,9 @@ class NorvigSpellChecker extends SpellChecker {
   var wordCounts : Map[String, Int] = Map()
   val alphabets = ('a' to 'z').toSet
 
-  override def train(trainFile : File) : Unit = train(new FileInputStream(trainFile))
+  def train(trainFile : File) : Unit = train(new FileInputStream(trainFile))
 
-  def train(trainFileStream : InputStream) : Unit = {
+  override def train(trainFileStream : InputStream) : Unit = {
     val lines = Source.fromInputStream(trainFileStream) mkString
     val wordREPattern = "[A-Za-z]+"
     wordREPattern.r.findAllIn(lines).foreach( txtWord => {
